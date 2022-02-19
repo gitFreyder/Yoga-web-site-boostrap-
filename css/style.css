@@ -58,103 +58,108 @@ h4{
 
 .navbar .navbar-brand{
     font-weight: normal;
-    font-size: 25px;
-    color: #FFFF;
-}
-.navbar .collapse .navbar-nav .nav-link{
-    color: #FFFF;
-    font-size: 18px;
-    
-}
-
-
-
-.navbar .navbar-brand .nav-link{
-    font-weight: normal;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    padding: 0;
+    font-size: 2rem;
     text-transform: uppercase;
-    transition: all ease-in-out 0.4s;
+    color: #FFFF;
+    letter-spacing: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar .navbar-nav .nav-link{
+    font-size: 18px;
+    font-weight: normal;
+    padding: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all .4s ease-in-out;
+    color: #FFFF;
+}
+
+
+/* propieda content */
+.navbar .navbar-nav .nav-link:hover{
+    background: transparent;
+    color: #FFFF;
+}
+
+.navbar .navbar-nav .nav-link::after{
+
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: transparent;
+    transition: 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover::after{
+    width: 100%;
+    background: #FFFF;
+    color: #FFFF;
+}
+
+
+
+
+/* ================== home ================== */
+
+#home{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    align-items: center;
     
 }
 
-
-
-.home{
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-}
-
-.home video{
-
-    /* para que el video sea fijo */
+#home video{
+    /* fijar el video */
     position: fixed;
     top: 50%;
     left: 50%;
     min-height: 100%;
     min-width: 100%;
-
-    /* altura y ancho automatico */
-    width: auto;
     height: auto;
+    width: auto;
+    /* fijar nustro video al aplicar flex */
     transform: translateX(-50%) translateY(-50%);
-
     background-size: cover;
-    /* ajuste al tamaño del fondo */
     object-fit: cover;
-
-    /* se desborda y se ocultara y no ver una barra de scroll */
     overflow: hidden;
-
-  /* para mostrar el texto y el menu*/
-  z-index: -100; 
-}
-.home .home-overlay{
-height: 150vh;
-width: 100%;
-position: absolute;
-top: 0;
-left: 0;
-background: #757575;
-object-fit: cover;
-background-size: cover;
-/* z-index: -99; */
-background: rgba(0, 0, 0, 0.50);
-}
-
-/*content vacio a nuestro menu*/
-.navbar .collapse .navbar-nav .nav-link:hover{
-    background: transparent;
-    color: #FFFF;
-}
-.navbar .collapse .navbar-nav .nav-link::after{
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: transparent;
-    transition: .3s ease;
-}
-.navbar .collapse .navbar-nav .nav-link:hover::after{
-width: 100%;
-background: #FFFF;
-color: #FFFF;
-}
-
-.home {  
-    color: #b9b7b7;
-}
-.home h1{
-    font-size: 4rem;
-    line-height:5rem ;
-    padding-bottom: 25px;
+    z-index: -100; /* poner capa atras */
+    transition: all  0.4s  ease-in-out;
 }
 
 
-.home-text{
-    z-index: 99;
-    /* border: 1px solid white; */
+#home .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    /* agregamos fixed-top a nav para overlay cubra toda la altura */
+}
+#home .home-text{
+    color: #cac9c9;
+    z-index: 1;
+}
+
+.home-text h1{
+    font-size: 3rem;
+
+    /* outline: 1px solid white; */
+    line-height: 4rem;
+}
+
+.home-text p{
+    font-size: 1.7rem;
+   
+}
+
+/* personalizando btn */
+.home-text .btn-leerMas{
+    background: black;
 }
